@@ -28,7 +28,7 @@ export function Univers(){
                         univers.length > 0 ? univers.map((univer) => {
                             const path = univer.images?.logo;
                             return path ? (
-                                <View key={univer.id} style={{ marginRight: 10 }}>
+                                <View key={univer.id} style={s.univer}>
                                     <Image 
                                         source={{ uri: path }} 
                                         style={{ width: 100, height: 100, resizeMode: 'contain' }} 

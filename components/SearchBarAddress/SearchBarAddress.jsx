@@ -26,6 +26,7 @@ export function SearchBarAddress({}){
     <View style={s.container}>
       <View>
         <TextInput
+          clearButtonMode="always"
           placeholder="Recherchez une adresse"
           value={searchText}
           onChangeText={(text) => {
@@ -38,15 +39,15 @@ export function SearchBarAddress({}){
       {isProposalVisible ? (
         <View style={s.proposalContainer}>
           {proposals.length > 0 ? (
-            proposals.map((proposal) => (
+            proposals.slice(0,5).map((proposal) => (
               <TouchableOpacity
+                style={s.touchableItem}
                 onPress={() => {
                   setIsProposalVisible(false);
                   setSearchText(proposal.display_name);
                   setAddress(proposal);
                 }}
-                key={proposal.place_id}
-              >
+                key={proposal.place_id}>
                 <Text>{proposal.display_name}</Text>
               </TouchableOpacity>
             ))

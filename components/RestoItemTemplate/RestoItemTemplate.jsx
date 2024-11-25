@@ -1,10 +1,14 @@
 import { Image, Text, View, Dimensions } from "react-native";
 import {s} from "./RestoItemTemplate.style"
+import { Helper } from "../../helpers/helper";
+import { useState } from "react";
 
 export function RestoItemTemplate({resto,isLarge=false}){
-    const path = "https://cdn.smood.ch/" + resto?.imgMobile || resto?.imgItem;
+    const path = "https://cdn.smood.ch/" + resto?.imgMobile;
+    const pathPlaceholder = "https://cdn.smood.ch/" + resto?.imgItem;
     var priceRange="";
     const { width, height } = Dimensions.get('window');
+    const [hasError, setHasError] = useState(false);
     for (let i = 0; i < resto.priceRange; i++) {
       priceRange=priceRange+"$";
     }
@@ -12,8 +16,11 @@ export function RestoItemTemplate({resto,isLarge=false}){
         
         <View style={isLarge ? {...s.largeContainer,width:width-20} : s.container}>
             <Image 
-                source={{uri:path}} 
-                style={isLarge ? {...s.imgLarge,width:width-20} : s.img} />
+                source={{uri:hasError ? pathPlaceholder : path}} 
+                style={isLarge ? {...s.imgLarge,width:width-20} : s.img}
+                onError={() => {
+                    setHasError(true); 
+                }} />
             <View style={s.infos}>
                 <View style={s.infosTagPrice}>
                     {
