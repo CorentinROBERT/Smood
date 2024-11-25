@@ -20,7 +20,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.corentin_robb.smood"
+      "package": "com.corentin_robb.smood",
+      "permissions": [
+        "CAMERA",
+        "LOCATION",
+        "DETECT_SCREEN_CAPTURE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

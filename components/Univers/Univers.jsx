@@ -23,7 +23,13 @@ export function Univers(){
         <View style={s.container}>
             <Text style={s.title}>Univers</Text>
             <View>
-                <ScrollView horizontal={true} style={s.scrollContainer}>
+                <ScrollView 
+                contentContainerStyle={
+                    {paddingLeft: 10,
+                    paddingRight: 10,}
+                }
+                horizontal={true} 
+                style={s.scrollContainer}>
                     {
                         univers.length > 0 ? univers.map((univer) => {
                             const path = univer.images?.logo;

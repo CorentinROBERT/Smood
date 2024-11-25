@@ -8,6 +8,7 @@ export const s = StyleSheet.create({
   title: {
     fontSize: 20,
     color: "gray",
+    paddingHorizontal: 10,
   },
 
   text: {
@@ -16,6 +17,7 @@ export const s = StyleSheet.create({
     fontWeight: "bold",
   },
   univer: {
+    marginBottom: 5,
     backgroundColor: "white",
     marginTop: 5,
     borderRadius: 10,

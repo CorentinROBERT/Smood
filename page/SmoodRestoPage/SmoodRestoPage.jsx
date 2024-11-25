@@ -1,12 +1,13 @@
-import { FlatList, ScrollView, Text, View } from "react-native";
+import { FlatList, ScrollView, Text, View, Platformform, Platform, TouchableOpacity } from "react-native";
 import { s } from "./SmoodRestoPage.style";
 import { Header } from "../../components/Header/Header";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SmoodContext } from "../../Contexts/SmoodContext";
 import { Univers } from "../../components/Univers/Univers";
 import { NewResto } from "../../components/NewResto/NewResto";
 import { SmoodAPI } from "../../api/SmoodAPI";
 import { RestoItemTemplate } from "../../components/RestoItemTemplate/RestoItemTemplate";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export function SmoodRestoPage({}){
 
@@ -14,6 +15,10 @@ export function SmoodRestoPage({}){
     const [page,setPage] = useState(1)
     const [restos,setRestos] = useState([])
     const [isRefresh,setIsRefresh]=useState(false)
+
+    const flatListRef = useRef()
+
+    const isScrollToTopVisible = Platform.OS === "android";
 
     useEffect(()=>{
         getResto();
@@ -51,9 +56,14 @@ export function SmoodRestoPage({}){
         }
     }
 
+    function scrollToTop(){
+        flatListRef.current.scrollToOffset({ animated: true, offset: 0 })
+    }
+
     return(
         <SmoodContext.Provider value={{setAddress}}>
             <FlatList
+                ref={flatListRef}
                 ListHeaderComponent={
                     <View style={s.container}>
                         <Header style={s.header}/>
@@ -66,6 +76,12 @@ export function SmoodRestoPage({}){
                 onEndReachedThreshold={5}
                 data={restos.stores}
                 renderItem={ ({index,item})=> <RestoItemTemplate key={item.key} resto={item} isLarge={true} />}/>
+                
+                {
+                    isScrollToTopVisible ? <TouchableOpacity style={s.scrollToTop} onPress={scrollToTop}>
+                    <Ionicons name="arrow-up-circle" size={50} color="#D83965" />
+                </TouchableOpacity>:null
+                }
                 
         </SmoodContext.Provider>
     );

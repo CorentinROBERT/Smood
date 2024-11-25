@@ -27,7 +27,7 @@ export const s = StyleSheet.create({
     padding: 5,
     borderColor: "#ccc",
     backgroundColor: "white",
-    borderRadius: "5",
+    borderRadius: 5,
     borderWidth: 1,
     zIndex: 100,
     elevation: 10,
