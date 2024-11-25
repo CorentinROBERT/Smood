@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "react-native-smood",
-    "slug": "react-native-smood",
+    "slug": "smood",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,10 +19,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.corentin_robb.smood"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "54bcfdf5-e722-4b18-ac96-b67d0e3c1580"
+      }
+    },
+    "owner": "corentin_robb"
   }
 }

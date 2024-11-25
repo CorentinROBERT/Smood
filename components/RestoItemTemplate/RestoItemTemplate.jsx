@@ -1,28 +1,30 @@
-import { Image, Text, View } from "react-native";
+import { Image, Text, View, Dimensions } from "react-native";
 import {s} from "./RestoItemTemplate.style"
-import { memo } from "react";
 
-export function RestoItemTemplate({resto}){
+export function RestoItemTemplate({resto,isLarge=false}){
     const path = "https://cdn.smood.ch/" + resto?.imgMobile || resto?.imgItem;
     var priceRange="";
+    const { width, height } = Dimensions.get('window');
     for (let i = 0; i < resto.priceRange; i++) {
       priceRange=priceRange+"$";
     }
     return(
         
-        <View style={s.container}>
-            <Image source={{uri:path}} style={s.img} />
-            <View>
-                <View style={s.infos}>
+        <View style={isLarge ? {...s.largeContainer,width:width-20} : s.container}>
+            <Image 
+                source={{uri:path}} 
+                style={isLarge ? {...s.imgLarge,width:width-20} : s.img} />
+            <View style={s.infos}>
+                <View style={s.infosTagPrice}>
                     {
                         resto.isNew ? <Text style={s.newTag}>Nouveau</Text>:null
                     }
                     <Text style={s.price}>{priceRange}</Text>
                 </View>
-                <View style={s.tags}>
+                <View style={isLarge ? s.tagsLarge : s.tags}>
                     {
                         resto.storeTags.map((storeTags)=>{
-                            return <Text lineBreakMode="head" numberOfLines={3} style={s.tagName}>{storeTags.name}</Text>
+                            return <Text key={storeTags.id} lineBreakMode="head" numberOfLines={3} style={s.tagName}>{storeTags.name}</Text>
                         })
                     }
                 </View>

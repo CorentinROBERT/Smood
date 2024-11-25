@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 export const s = StyleSheet.create({
   container: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
   },
   img: {
     width: 30,
@@ -12,5 +12,10 @@ export const s = StyleSheet.create({
   },
   title: {
     fontSize: 20,
+    color: "#D83965",
+    fontWeight: "bold",
+  },
+  searchbar: {
+    zIndex: 10,
   },
 });

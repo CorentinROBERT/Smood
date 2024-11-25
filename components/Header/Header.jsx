@@ -7,10 +7,10 @@ export function Header({}){
     return(
         <View style={s.container}>
             <Text style={s.title}>Smood</Text>
-            <SearchBarAddress/>
+            <SearchBarAddress style={s.searchbar}/>
             <TouchableOpacity>
                 <Image source={profileImg} style={s.img} />
-                </TouchableOpacity>
+            </TouchableOpacity>
         </View>
     );
 }

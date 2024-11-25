@@ -22,32 +22,39 @@ export function SearchBarAddress({}){
         setIsSearchResult(false);
     }
 
-    return(
-        <View style={s.container}>
-            <View>
-                <TextInput value={searchText} onChangeText={(text)=>{
-                    setSearchText(text)
-                    getAddressFromName(text)
-                    }} style={s.input}/>
-            </View>
-            {isProposalVisible ? proposals.length>0 ? <View style={s.proposalContainer}>
-                {
-                    proposals.map((proposal,index) => {
-                        return(
-                            <TouchableOpacity onPress={()=>{
-                                setIsProposalVisible(false);
-                                setSearchText(proposal.display_name);
-                                setAddress(proposal);
-                            }} key={proposal.place_id}>
-                                <Text>
-                                    {proposal.display_name}
-                                </Text>
-                            </TouchableOpacity>
-                        );
-                    })
-                }
-            </View> : <View style={s.proposalContainer}><Text>No results for this address</Text></View> : null}
-            
+    return (
+    <View style={s.container}>
+      <View>
+        <TextInput
+          placeholder="Recherchez une adresse"
+          value={searchText}
+          onChangeText={(text) => {
+            setSearchText(text);
+            getAddressFromName(text);
+          }}
+          style={s.input}
+        />
+      </View>
+      {isProposalVisible ? (
+        <View style={s.proposalContainer}>
+          {proposals.length > 0 ? (
+            proposals.map((proposal) => (
+              <TouchableOpacity
+                onPress={() => {
+                  setIsProposalVisible(false);
+                  setSearchText(proposal.display_name);
+                  setAddress(proposal);
+                }}
+                key={proposal.place_id}
+              >
+                <Text>{proposal.display_name}</Text>
+              </TouchableOpacity>
+            ))
+          ) : (
+            <Text>No results for this address</Text>
+          )}
         </View>
-    );
+      ) : null}
+    </View>
+  );
 };
