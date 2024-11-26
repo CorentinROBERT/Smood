@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const s = StyleSheet.create({
   container: {},
   header: {
     zIndex: 10,
     elevation: 10,
-    position: "absolute",
+    position: 'absolute',
   },
   univers: {
     zIndex: 1,
@@ -13,12 +13,12 @@ export const s = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    color: "gray",
+    color: 'gray',
     marginVertical: 10,
     paddingHorizontal: 10,
   },
   scrollToTop: {
-    position: "absolute",
+    position: 'absolute',
     bottom: 20,
     right: 20,
   },

@@ -1,9 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const s = StyleSheet.create({
   container: {
     flex: 1,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -14,10 +14,10 @@ export const s = StyleSheet.create({
   },
   input: {
     borderRadius: 10,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     height: 30,
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: '#ccc',
     paddingHorizontal: 10,
     marginHorizontal: 5,
   },
@@ -25,8 +25,8 @@ export const s = StyleSheet.create({
     marginHorizontal: 5,
     flex: 1,
     padding: 5,
-    borderColor: "#ccc",
-    backgroundColor: "white",
+    borderColor: '#ccc',
+    backgroundColor: 'white',
     borderRadius: 5,
     borderWidth: 1,
     zIndex: 100,
@@ -35,6 +35,6 @@ export const s = StyleSheet.create({
   touchableItem: {
     padding: 5,
     borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
+    borderBottomColor: '#ccc',
   },
 });

@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const s = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    flexDirection: 'row',
 
-    justifyContent: "space-between",
-    alignItems: "center",
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingHorizontal: 10,
     paddingTop: 2,
   },
@@ -15,8 +15,8 @@ export const s = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    color: "#D83965",
-    fontWeight: "bold",
+    color: '#D83965',
+    fontWeight: 'bold',
   },
   searchbar: {
     zIndex: 10,

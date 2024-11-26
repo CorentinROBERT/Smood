@@ -1,9 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const s = StyleSheet.create({
   title: {
     fontSize: 20,
-    color: "gray",
+    color: 'gray',
     paddingHorizontal: 10,
   },
 });

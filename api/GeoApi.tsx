@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios';
 
 export class GeoApi {
-  static async getAddressFromName(address) {
+  static async getAddressFromName(address: string) {
     try {
       const response = (
         await axios.get(
@@ -9,8 +9,8 @@ export class GeoApi {
         )
       ).data;
       return response || [];
-    } catch (error) {
-      console.error("Error fetching address:", error.message);
+    } catch (error: any) {
+      console.error('Error fetching address:', error.message);
       return [];
     }
   }
