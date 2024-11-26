@@ -26,6 +26,7 @@ export function SearchBarAddress({}){
     <View style={s.container}>
       <View>
         <TextInput
+          selectionColor={'black'}
           clearButtonMode="always"
           placeholder="Recherchez une adresse"
           value={searchText}

@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const s = StyleSheet.create({
   img: {
     flex: 1,
-    resizeMode: "cover",
+    contentFit: "cover",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
@@ -12,7 +12,7 @@ export const s = StyleSheet.create({
     borderTopRightRadius: 10,
     overflow: "hidden",
     flex: 1,
-    resizeMode: "cover",
+    contentFit: "cover",
   },
   restoName: {
     fontWeight: "bold",
