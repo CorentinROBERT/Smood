@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const s = StyleSheet.create({
   img: {
     flex: 1,
-    resizeMode: "stretch",
+    resizeMode: "cover",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
@@ -12,13 +12,14 @@ export const s = StyleSheet.create({
     borderTopRightRadius: 10,
     overflow: "hidden",
     flex: 1,
-    resizeMode: "stretch",
+    resizeMode: "cover",
   },
   restoName: {
     fontWeight: "bold",
     fontSize: 25,
   },
   container: {
+    width: 300,
     marginHorizontal: 5,
     height: 300,
     backgroundColor: "white",
@@ -55,27 +56,44 @@ export const s = StyleSheet.create({
   newTag: {
     color: "#D83965",
     fontWeight: "bold",
-    paddingRight: 10,
+    padding: 5,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#D83965",
+    position: "absolute",
+    backgroundColor: "#FFFFFF",
+    bottom: 5,
+    right: 5,
+    overflow: "hidden",
   },
   infosTagPrice: {
     flexDirection: "row",
   },
   tags: {
     flexDirection: "row",
+    flexWrap: "wrap",
   },
   price: {
     fontWeight: "bold",
+    color: "#D83965",
   },
   tagName: {
     color: "gray",
-    textAlign: "left",
-    paddingHorizontal: 5,
   },
   tagsLarge: {
     width: "100%",
     flexDirection: "row",
   },
-  tags: {
-    width: 300,
+  separator: {
+    color: "gray",
+  },
+  timeFee: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  topInfos: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });

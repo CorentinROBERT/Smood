@@ -5,6 +5,7 @@ export const s = StyleSheet.create({
   header: {
     zIndex: 10,
     elevation: 10,
+    position: "absolute",
   },
   univers: {
     zIndex: 1,
@@ -20,5 +21,8 @@ export const s = StyleSheet.create({
     position: "absolute",
     bottom: 20,
     right: 20,
+  },
+  flatList: {
+    marginTop: 10,
   },
 });
